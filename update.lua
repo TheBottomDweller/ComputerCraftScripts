@@ -11,6 +11,7 @@ function addSoftware()
         else
             url = (gitHubRepositoryLink .. fileRequested)
             print(http.get(url).readAll())
+            shell.run("/wget", url)
         end
     else
         print(fileRequested .. " doesn't exist, fuckhead")
@@ -24,6 +25,8 @@ function updateSoftware()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
         if fs.exists("/"..fileRequested) == true then
          print("request checks out")
+         fs.getDir("/"..fileRequested).delete(fileRequested)
+         shell.run("/wget", gitHubRepositoryLink..fileRequested)
         else
             print("File does not exist, try add instead")
         end
