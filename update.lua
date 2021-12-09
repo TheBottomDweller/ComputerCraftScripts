@@ -7,7 +7,7 @@ function addSoftware()
     fileRequested = read()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
         url = (gitHubRepositoryLink .. fileRequested)
-        http.get(url).readAll()
+        print(http.get(url).readAll())
     else
         print(fileRequested .. " doesn't exist, fuckhead")
     end
