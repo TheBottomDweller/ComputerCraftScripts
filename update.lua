@@ -6,8 +6,12 @@ function addSoftware()
     term.write("Provide File Name: ")
     fileRequested = read()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
-        url = (gitHubRepositoryLink .. fileRequested)
-        print(http.get(url).readAll())
+        if fs.exists("/"..fileRequested) == true then
+            print ("File already exists")
+        else
+            url = (gitHubRepositoryLink .. fileRequested)
+            print(http.get(url).readAll())
+        end
     else
         print(fileRequested .. " doesn't exist, fuckhead")
     end
@@ -18,7 +22,11 @@ function updateSoftware()
     term.write("Provide File Name, Dumbledick")
     fileRequested = read()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
-        print("request checks out")
+        if fs.exists("/"..fileRequested) == true then
+         print("request checks out")
+        else
+            print("File does not exist, try add instead")
+        end
     else
         print(fileRequested .. " was not found")
     end
