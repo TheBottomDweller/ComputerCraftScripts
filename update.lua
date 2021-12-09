@@ -1,6 +1,17 @@
-local gitHubRepositoryLink = "https://https://www.github.com/TheBottomDweller/ComputerCraftScripts"
+local gitHubRepositoryLink = "https://raw.githubusercontent.com/TheBottomDweller/ComputerCraftScripts/main/"
 
-
+function addSoftware()
+    local fileRequested = ""
+    local url = ""
+    term.write("Provide File Name, Dumbledick")
+    fileRequested = read()
+    if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
+        url = (gitHubRepositoryLink .. fileRequested)
+        http.get(url).readAll()
+    else
+        print(fileRequested .. " doesn't exist, fuckhead")
+    end
+end
 
 function updateSoftware()
     local fileRequested = ""
