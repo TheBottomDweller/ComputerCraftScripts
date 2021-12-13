@@ -23,7 +23,9 @@ function getItemIndex(itemName)
     for slot = 1, SLOT_COUNT, 1 do
         local item = turtle.getItemDetail(slot)
         if (item ~= nil) then
+            print(item["name"])
             if(item["name"] == itemName) then
+                print (slot)
                 return slot
             end
         end
@@ -37,7 +39,7 @@ if (data['state']['age'] == 7) then
     retrieveHarvest()
     itemIndex = getItemIndex(cropChoice)
     seedIndex = getItemIndex(cropSeed)
-    turtle.select(cropSeed)
+    turtle.select(seedIndex)
     turtle.place()
 end
 
