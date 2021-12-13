@@ -13,6 +13,12 @@ function retrieveHarvest()
     end
 end
 
+function moveLeft()
+    turtle.turnLeft()
+    turtle.forward()
+    turtle.turnRight()
+end
+
 function getItemIndex(itemName)
     for slot = 1, SLOT_COUNT, 1 do
         local item = turtle.getItemDetail(slot)
@@ -31,4 +37,8 @@ if (data['state']['age'] == 7) then
     retrieveHarvest()
     itemIndex = getItemIndex(cropChoice)
     seedIndex = getItemIndex(cropSeed)
+    turtle.select(cropSeed)
+    turtle.place()
 end
+
+moveLeft()
