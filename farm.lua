@@ -51,9 +51,10 @@ function returnToOrigin()
     turtle.turnLeft()
     repeat
         turtle.forward()
-    until turtle.inspect() == "minecraft:chest"
+        itemBlock, chest = turtle.inspect
+    until chest["name"] == "minecraft:chest"
     dropHarvest()
-    turtle.turnRight()
+    turtle.turnLeft()
     if (turtle.getFuelLevel() > 15) then
         standbyForHarvest()
     else
