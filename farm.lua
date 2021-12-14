@@ -55,7 +55,7 @@ function returnToOrigin()
     dropHarvest()
     turtle.turnRight()
     if (turtle.getFuelLevel() > 15) then
-    standbyForHarvest()
+        standbyForHarvest()
     else
         print("Not enough fuel, on Standby")
     end
