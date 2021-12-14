@@ -93,7 +93,6 @@ end
 function standbyForHarvest()
     repeat
         isBlock, data = turtle.inspect()
-        wait(1)
     until data['state']['age'] == 7
         checkFuel()
         if(isBlock) then
