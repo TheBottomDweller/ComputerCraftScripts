@@ -114,5 +114,4 @@ function standbyForHarvest()
      moveLeft()
 end
 
-
 standbyForHarvest()
