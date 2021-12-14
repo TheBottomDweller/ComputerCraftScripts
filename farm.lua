@@ -110,11 +110,15 @@ function standbyForHarvest()
                 retrieveHarvest()
                 itemIndex = getItemIndex(cropChoice)
                 seedIndex = getItemIndex(cropSeed)
-                turtle.select(seedIndex)
-                turtle.place()
-            end
+                if seedIndex ~= nil then
+                    turtle.select(seedIndex)
+                    turtle.place()
+                    moveLeft()
+                else
+                    print("No more seeds, on standby")
+                end
         end
-     moveLeft()
+     end
 end
 
 standbyForHarvest()
