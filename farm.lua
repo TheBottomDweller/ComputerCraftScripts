@@ -65,11 +65,13 @@ end
 function dropHarvest()
     for i = 1, SLOT_COUNT, 1 do
         local item = getItemIndex(cropChoice)
-        turtle.select(item)
-        if cropChoice == cropSeed then
-            turtle.drop(turtle.getItemCount() - 1)
-        else
+        if (item ~= nil) then
+            turtle.select(item)
+            if cropChoice == cropSeed then
+             turtle.drop(turtle.getItemCount() - 1)
+            else
             turtle.drop(turtle.getItemCount())
+            end
         end
     end
 end
