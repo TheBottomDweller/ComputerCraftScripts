@@ -78,6 +78,7 @@ function moveLeft()
     local continue = checkNMove()
     if continue == true then
         turtle.turnRight()
+        standbyForHarvest()
     else
         returnToOrigin()
     end
