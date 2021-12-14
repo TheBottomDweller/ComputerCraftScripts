@@ -51,7 +51,7 @@ function returnToOrigin()
     turtle.turnLeft()
     repeat
         turtle.forward()
-        itemBlock, chest = turtle.inspect
+        itemBlock, chest = turtle.inspect()
     until chest["name"] == "minecraft:chest"
     dropHarvest()
     turtle.turnLeft()
