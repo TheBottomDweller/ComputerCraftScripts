@@ -65,9 +65,14 @@ function dropHarvest()
     for i = 1, SLOT_COUNT, 1 do
         local item = getItemIndex(cropChoice)
         turtle.select(item)
-        turtle.drop(all)
+        if cropChoice == cropSeed then
+            turtle.drop(turtle.getItemCount() - 1)
+        else
+            turtle.drop(turtle.getItemCount())
+        end
     end
 end
+
 function moveLeft()
     turtle.turnLeft()
     local continue = checkNMove()
@@ -103,12 +108,6 @@ function standbyForHarvest()
                 seedIndex = getItemIndex(cropSeed)
                 turtle.select(seedIndex)
                 turtle.place()
-                if cropChoice == cropSeed then
-                    turtle.dropDown(turtle.getItemCount() - 1)
-                else
-                    turtle.dropDown(turtle.getItemCount() - 1)
-                    turtle.select(getItemIndex)
-                end
             end
         end
      moveLeft()
