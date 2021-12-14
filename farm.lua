@@ -52,7 +52,7 @@ function returnToOrigin()
     repeat
         turtle.forward()
     until turtle.inspect() == "minecraft:chest"
-    turtle.drop()
+    dropHarvest()
     turtle.turnRight()
     if (turtle.getFuelLevel() > 15) then
     standbyForHarvest()
@@ -61,6 +61,13 @@ function returnToOrigin()
     end
 end
 
+function dropHarvest()
+    for i = 1, SLOT_COUNT, 1 do
+        local item = getItemIndex(cropChoice)
+        turtle.select(item)
+        turtle.drop(all)
+    end
+end
 function moveLeft()
     turtle.turnLeft()
     local continue = checkNMove()
