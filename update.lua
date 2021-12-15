@@ -25,7 +25,7 @@ function updateSoftware()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
         if fs.exists("/"..fileRequested) == true then
          print("request checks out")
-         fs.getDir("/"..fileRequested).delete(fileRequested)
+         fs.getDir("/"..fileRequested).delete("/"..fileRequested)
          shell.run("/rom/programs/http/wget", gitHubRepositoryLink..fileRequested)
         else
             print("File does not exist, try add instead")
