@@ -1,2 +1,10 @@
 local SLOT_COUNT = 16
-local direction = 1
+
+local length, width, height
+
+
+
+
+
+
+
