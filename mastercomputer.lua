@@ -1,3 +1,4 @@
+os.loadAPI("button")
 local monitor = peripheral.wrap("back")
 local modem = peripheral.wrap("top")
 monitor.clear()
@@ -23,11 +24,16 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
 end
 
 function MainMenuTable()
-    button.setTable("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
+    button.createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
 end
 
 function FarmbotMenu()
     clearButtonTable()
+    button.createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
+end
+
+function buttonCheck()
+    print("Button Works")
 end
 
 function fill(text, color, bData)
@@ -50,6 +56,13 @@ function fill(text, color, bData)
             end
         end
     end
+    monitor.setBackgroundColor(colors.black)
+end
+
+function screenName(text)
+    w, h = monitor.getSize()
+    monitor.setCursorPos((w - string.len(text)) /2 + 1, 1)
+    monitor.write(text)
 end
 
 function screen()
@@ -63,6 +76,35 @@ function screen()
         end
         fill(name, currColor, data)
     end
+end
+
+function flash(name)
+    toggleButton(name)
+    screen()
+    sleep(0.15)
+    toggleButton(name)
+    screen()
+end
+
+function checkClick(x, y)
+    for name, data in pairs(button) do
+        if y >= data["ymin"] and y <= data["ymax"] then
+            if x >= data["xmin"] and x >= data["xmax"] then
+                data[func]()
+                return true
+            end
+        end
+    end
+end
+
+function toggleButton(name)
+    button[name]["active"] = not button[name]["active"]
+    screen()
+end
+
+function getClick()
+    event, side, x, y = os.pullEvent("monitor_touch")
+    button.checkClick(x, y)
 end
 
 MainMenuTable()
