@@ -108,7 +108,7 @@ function getClick()
     print("event: " .. event)
     print("side: " .. side)
     print(x .. " " .. y)
-    button.checkClick(x, y)
+    checkClick(x, y)
 end
 
 MainMenuTable()
