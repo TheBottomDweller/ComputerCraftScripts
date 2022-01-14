@@ -24,6 +24,7 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
 end
 
 function MainMenuTable()
+    screenName("Main Screen")
     createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
 end
 
@@ -107,5 +108,4 @@ function getClick()
     button.checkClick(x, y)
 end
 
-MainMenuTable()
 screen()
