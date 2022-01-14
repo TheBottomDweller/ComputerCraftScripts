@@ -24,12 +24,12 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
 end
 
 function MainMenuTable()
-    button.createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
+    createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
 end
 
 function FarmbotMenu()
     clearButtonTable()
-    button.createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
+    createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
 end
 
 function buttonCheck()
