@@ -105,6 +105,9 @@ end
 
 function getClick()
     event, side, x, y = os.pullEvent("monitor_touch")
+    print("event: " .. event)
+    print("side: " .. side)
+    print(x .. " " .. y)
     button.checkClick(x, y)
 end
 
