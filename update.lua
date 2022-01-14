@@ -20,7 +20,7 @@ end
 
 function updateSoftware()
     local fileRequested = ""
-    term.write("Provide File Name, Dumbledick")
+    term.write("Provide File Name, Dumbledick: ")
     fileRequested = read()
     if http.checkURL(gitHubRepositoryLink .. fileRequested) == true then
         if fs.exists("/"..fileRequested) == true then
