@@ -26,7 +26,7 @@ function updateSoftware()
         if fs.exists("/"..fileRequested) == true then
          print("request checks out")
          local file = fs.getDir("/"..fileRequested)
-         file.delete(fileRequested)
+         fs.delete("/"..fileRequested)
          shell.run("/rom/programs/http/wget", gitHubRepositoryLink..fileRequested)
         else
             print("File does not exist, try add instead")
