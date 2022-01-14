@@ -1,4 +1,4 @@
-os.loadAPI("button")
+
 local monitor = peripheral.wrap("back")
 local modem = peripheral.wrap("top")
 monitor.clear()
