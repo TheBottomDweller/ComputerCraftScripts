@@ -108,4 +108,8 @@ function getClick()
     button.checkClick(x, y)
 end
 
+MainMenuTable()
 screen()
+while true do
+    getClick()
+end
