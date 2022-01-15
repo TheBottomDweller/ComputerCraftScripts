@@ -7,6 +7,11 @@ monitor.setTextColor(colors.white)
 local button = {}
 monitor.setBackgroundColor((colors.black))
 
+function bootUpSequence()
+    modem.open(1)
+end
+
+
 function clearButtonTable()
     button = {}
     monitor.clear()
@@ -33,7 +38,7 @@ end
 function FarmbotMenu()
     clearButtonTable()
     screenName("Farmbot Menu")
-    createButton("Test", buttonCheck, 2, 10, 2, 4, colors.red)
+    createButton("Turtles", buttonCheck, 2, 10, 2, 4, colors.red)
     createButton("Back", MainMenuTable, 2, 10, 6, 8, colors.green)
     screen()
 end
