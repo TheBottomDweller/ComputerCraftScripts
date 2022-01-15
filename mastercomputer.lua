@@ -26,15 +26,15 @@ end
 function MainMenuTable()
     clearButtonTable()
     screenName("Main Screen")
-    createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
+    createButton("Farmbots", FarmbotMenu, 2, 10, 2, 5, colors.green)
     screen()
 end
 
 function FarmbotMenu()
     clearButtonTable()
     screenName("Farmbot Menu")
-    createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
-    createButton("Back", MainMenuTable, 2, 8, 4, 7, colors.green)
+    createButton("Test", buttonCheck, 2, 10, 2, 4, colors.red)
+    createButton("Back", MainMenuTable, 2, 10, 6, 8, colors.green)
     screen()
 end
 
