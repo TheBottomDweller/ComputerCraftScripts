@@ -24,14 +24,17 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
 end
 
 function MainMenuTable()
+    clearButtonTable()
     screenName("Main Screen")
     createButton("Farmbots", FarmbotMenu, 2, 8, 2, 5, colors.green)
+    screen()
 end
 
 function FarmbotMenu()
     clearButtonTable()
     screenName("Farmbot Menu")
     createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
+    createButton("Back", MainMenuTable, 2, 8, 4, 7, colors.green)
     screen()
 end
 
@@ -114,7 +117,6 @@ function getClick()
 end
 
 MainMenuTable()
-screen()
 while true do
     getClick()
 end
