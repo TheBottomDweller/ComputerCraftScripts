@@ -30,7 +30,9 @@ end
 
 function FarmbotMenu()
     clearButtonTable()
+    screenName("Farmbot Menu")
     createButton("test", buttonCheck, 2, 8, 2, 5, colors.red)
+    screen()
 end
 
 function buttonCheck()
