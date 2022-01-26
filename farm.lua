@@ -9,6 +9,7 @@ if (#arg == 3) then
     stopBlock = (arg[3])
 else
     print("Incomplete Instructions")
+    shell.run("startup.lua")
 end
 
 
