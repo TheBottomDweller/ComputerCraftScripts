@@ -7,7 +7,6 @@ if (#arg == 3) then
     cropChoice = (arg[1])
     cropSeed = (arg[2])
     stopBlock = (arg[3])
-    standbyForHarvest()
 else
     print("Incomplete Instructions")
 end
@@ -122,4 +121,4 @@ function standbyForHarvest()
      end
 end
 
-
+standbyForHarvest()
