@@ -3,13 +3,14 @@ local cropChoice
 local cropSeed
 local stopBlock
 
-term.write("Please Provide Crop ID: ")
-cropChoice = read()
-term.write("Now Provide Seed ID: ")
-cropSeed = read()
-term.write("Finally, Provide the Stop Block: ")
-stopBlock = read()
-print("Setup Complete, Make sure a chest is at the starting point")
+if (#arg == 3) then
+    cropChoice = (arg[1])
+    cropSeed = (arg[2])
+    stopBlock = (arg[3])
+    standbyForHarvest()
+else
+    print("Incomplete Instructions")
+end
 
 
 function retrieveHarvest()
@@ -121,4 +122,4 @@ function standbyForHarvest()
      end
 end
 
-standbyForHarvest()
+

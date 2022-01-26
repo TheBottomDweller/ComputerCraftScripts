@@ -1,6 +1,8 @@
 
 local monitor = peripheral.wrap("back")
 local modem = peripheral.wrap("top")
+local selectedTurtle
+local selectedTurtleIP
 monitor.clear()
 monitor.setTextScale(1)
 monitor.setTextColor(colors.white)
@@ -26,6 +28,19 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
     button[name]["ymin"] = ymin
     button[name]["ymax"] = ymax
     button[name]["color"] = color
+end
+
+function createTurtleButton(name, func, xmin, xmax, ymin, ymax, color, id, ip)
+    button[name] = {}
+    button[name]["func"] = func
+    button[name]["active"] = false
+    button[name]["xmin"] = xmin
+    button[name]["xmax"] = xmax
+    button[name]["ymin"] = ymin
+    button[name]["ymax"] = ymax
+    button[name]["color"] = color
+    button[name]["ID"] = id
+    button[name]["IP"] = ip
 end
 
 function MainMenuTable()
