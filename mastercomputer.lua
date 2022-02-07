@@ -7,6 +7,7 @@ monitor.clear()
 monitor.setTextScale(1)
 monitor.setTextColor(colors.white)
 local button = {}
+local foundturtles = {}
 monitor.setBackgroundColor((colors.black))
 
 function bootUpSequence()
@@ -17,6 +18,10 @@ end
 function clearButtonTable()
     button = {}
     monitor.clear()
+end
+
+function cleartTurtleTable()
+    foundturtles = {}
 end
 
 function createButton(name, func, xmin, xmax, ymin, ymax, color)
@@ -30,7 +35,7 @@ function createButton(name, func, xmin, xmax, ymin, ymax, color)
     button[name]["color"] = color
 end
 
-function createTurtleButton(name, func, xmin, xmax, ymin, ymax, color, id, ip)
+function createComputerButton(name, func, xmin, xmax, ymin, ymax, color, id, ip)
     button[name] = {}
     button[name]["func"] = func
     button[name]["active"] = false
@@ -46,7 +51,7 @@ end
 function MainMenuTable()
     clearButtonTable()
     screenName("Main Screen")
-    createButton("Farmbots", FarmbotMenu, 2, 10, 2, 5, colors.green)
+    createButton("Farmbots", FarmbotMenu, 2, 10, 2, 4, colors.green)
     screen()
 end
 
@@ -60,6 +65,15 @@ end
 
 function buttonCheck()
     print("Button Works")
+end
+
+function FarmbotListMenu()
+    clearButtonTable()
+    local minX = 2
+    local maxX = 10
+    local minY = 2
+    local maxY = 4
+    
 end
 
 function fill(text, color, bData)
