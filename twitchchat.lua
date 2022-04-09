@@ -1,6 +1,7 @@
 local screen = peripheral.wrap("right")
 local xpos = 1
 local ypos = 1
+local screenSize = screen.getSize()
 screen.clear()
 screen.setCursorPos(xpos,ypos)
 while true do
@@ -8,4 +9,7 @@ while true do
     screen.write(text)
     ypos = ypos + 1
     screen.setCursorPos(1, ypos)
+    if ypos >= screenSize[2] then
+        screen.scroll(1)
+    end
 end
