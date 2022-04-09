@@ -76,6 +76,7 @@ function FarmbotListMenu()
     
 end
 
+--This part was not made by me.....
 function fill(text, color, bData)
     monitor.setBackgroundColor(color)
     local yspot = math.floor((bData["ymin"] + bData["ymax"]) /2)
@@ -118,6 +119,7 @@ function screen()
     end
 end
 
+--This part was not made by me.....
 function flash(name)
     toggleButton(name)
     screen()
