@@ -75,6 +75,7 @@ function dropHarvest()
             end
             if cropChoice == "minecraft:potatoes" then
                 item = getItemIndex("minecraft:potato")
+                turtle.select(item)
                 turtle.drop(turtle.getItemCount() - 1)
             end
         end
