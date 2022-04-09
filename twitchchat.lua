@@ -1,5 +1,5 @@
 local screen = peripheral.wrap("right")
-
+screen.clear()
 text = http.get("https://dashboard.twitch.tv/popout/u/thebottomdweller/stream-manager/chat?uuid=1cc5fef56301e3c0f6e020b752744553")
 screen.write(text)
 curCursorPos = screen.getCursorPos()
