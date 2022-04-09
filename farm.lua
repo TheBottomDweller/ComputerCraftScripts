@@ -68,15 +68,16 @@ function dropHarvest()
         local item = getItemIndex(cropChoice)
         if (item ~= nil) then
             turtle.select(item)
-            if cropChoice == cropSeed then
-             turtle.drop(turtle.getItemCount() - 1)
+            if cropChoice ~= cropSeed then
+                if cropChoice == "minecraft:potatoes" then
+                    item = getItemIndex("minecraft:potato")
+                    turtle.select(item)
+                    turtle.drop(turtle.getItemCount() - 1)
+                else
+                    turtle.drop(turtle.getItemCount())
+                end
             else
             turtle.drop(turtle.getItemCount() - 1)
-            end
-            if cropChoice == "minecraft:potatoes" then
-                item = getItemIndex("minecraft:potato")
-                turtle.select(item)
-                turtle.drop(turtle.getItemCount() - 1)
             end
         end
     end
